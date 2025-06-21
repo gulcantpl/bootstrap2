@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram Clone</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #fafafa;
+      padding-top: 54px;
+    }
+    .navbar-custom {
+      height: 54px;
+      background-color: white !important;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+      border-bottom: 1px solid #dbdbdb;
+    }
+    .navbar-logo {
+      margin-left: 192px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .search-bar {
+      margin-left: 5px;
+      max-width: 250px;
+      flex-grow: 1;
+    }
+    .menu-icons {
+      margin-left: 5px;
+      margin-top: 2px;
+    }
+    @media (max-width: 576px) {
+      .menu-icons {
+        display: none !important;
+      }
+    }
+    .stories {
+      overflow-x: auto;
+      white-space: nowrap;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .story {
+      display: inline-block;
+      width: 70px;
+      margin-right: 15px;
+      text-align: center;
+      font-size: 12px;
+    }
+    .story img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+    .story img:hover {
+      transform: scale(1.1);
+    }
+    .post-card {
+      margin-bottom: 20px;
+    }
+    .card-header, .card-footer {
+      background-color: white !important;
+      border: none !important;
+    }
+    .card-footer i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .card-footer i:hover {
+      color: #666;
+      transform: scale(1.1);
+    }
+    .rightpanel {
+      background-color: white;
+      border: none;
+    }
+    .stickysidebar {
+      position: sticky;
+      top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-custom d-flex align-items-center px-3">
+  <div class="navbar-logo">Instagram</div>
+  <div class="d-flex search-bar">
+    <input type="text" class="form-control form-control-sm" placeholder="Ara" />
+  </div>
+  <div class="menu-icons d-flex gap-3">
+    <i class="fa-solid fa-house fa-lg"></i>
+    <i class="fa-solid fa-paper-plane fa-lg"></i>
+    <i class="fa-regular fa-compass fa-lg"></i>
+    <i class="fa-regular fa-heart fa-lg"></i>
+    <i class="fa-regular fa-user fa-lg"></i>
+  </div>
+</nav>
+
+<!-- Ana içerik -->
+<div class="container mt-4">
+  <!-- Hikayeler -->
+  <div class="stories mb-4">
+    <div class="story">
+      <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="ayse" />
+      <div>ayse</div>
+    </div>
+    <div class="story">
+      <img src="https://randomuser.me/api/portraits/men/14.jpg" alt="mehmet" />
+      <div>mehmet</div>
+    </div>
+    <div class="story">
+      <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="zeynep" />
+      <div>zeynep</div>
+    </div>
+    <div class="story">
+      <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="burak" />
+      <div>burak</div>
+    </div>
+  </div>
+
+  <!-- Grid: Gönderiler ve Sağ Panel -->
+  <div class="row">
+    <!-- Gönderiler -->
+    <div class="col-12 col-lg-8">
+
+      <!-- 1. Gönderi -->
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/17.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>ali_kaya</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/237/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+
+      <!-- 2. Gönderi -->
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/women/25.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>selin_kar</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/1005/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+
+      <!-- 3. Gönderi -->
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/50.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>ahmet_oz</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/1035/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/50.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>ahmet_oz</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/135/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+
+      <!-- 4. Gönderi -->
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/women/55.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>elif_san</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/1060/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+
+      <!-- 5. Gönderi -->
+      <div class="card post-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/33.jpg" class="rounded-circle me-2" width="32" height="32" />
+            <strong>kemal_tr</strong>
+          </div>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <img src="https://picsum.photos/id/1042/600/400" class="card-img-top" />
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <div class="d-flex gap-3">
+            <i class="fa-regular fa-heart fa-lg"></i>
+            <i class="fa-regular fa-comment fa-lg"></i>
+            <i class="fa-solid fa-paper-plane fa-lg"></i>
+          </div>
+          <i class="fa-regular fa-bookmark fa-lg ms-auto"></i>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sağ Panel -->
+    <div class="col-lg-4 d-none d-lg-block">
+      <div class="rightpanel stickysidebar p-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div>
+            <strong>merve.scr</strong><br />
+            <small class="text-muted">Senin için önerilen</small>
+          </div>
+          <a href="#" class="text-primary">Tümünü gör</a>
+        </div>
+
+        <!-- Önerilen kullanıcılar -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/22.jpg" class="rounded-circle" width="40" height="40" />
+            <div class="ms-2">
+              <strong>coderx</strong><br />
+              <small class="text-muted">Yeni katıldı</small>
+            </div>
+          </div>
+          <a href="#" class="text-primary">Takip Et</a>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" class="rounded-circle" width="40" height="40" />
+            <div class="ms-2">
+              <strong>ayse_07</strong><br />
+              <small class="text-muted">Yeni katıldı</small>
+            </div>
+          </div>
+          <a href="#" class="text-primary">Takip Et</a>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <div class="d-flex align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg" class="rounded-circle" width="40" height="40" />
+            <div class="ms-2">
+              <strong>ahmet.k</strong><br />
+              <small class="text-muted">Yeni katıldı</small>
+            </div>
+          </div>
+          <a href="#" class="text-primary">Takip Et</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
